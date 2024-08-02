@@ -62,7 +62,7 @@ class Yomu
     if input.is_a? String
       if input =~ URI::regexp
         @uri = URI.parse input
-      elsif File.exists? input
+      elsif File.exist? input
         @path = input
       else
         raise Errno::ENOENT.new "missing file or invalid URI - #{input}"
